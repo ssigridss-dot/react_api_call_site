@@ -1,9 +1,9 @@
 {
-  "name": "google-books-app",
+  "name": "react_api_call_site",
+  "homepage": "https://ssigridss-dot.github.io/react_api_call_site",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ssigridss-dot.github.io/react_api_call_site",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

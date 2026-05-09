@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Typography, Button, Box, } from "@mui/material";
 import { getFavorites, saveFavorites } from "../utils/localStorage";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Favorites() {
   const navigate = useNavigate();
@@ -46,9 +46,25 @@ export default function Favorites() {
               {book.volumeInfo.authors?.[0]}
             </Typography>
 
-            <Button onClick={() => remove(book.id)}>
-              ❌ Remove
-            </Button>
+            <Box sx={{ mt: 1, display: "flex", gap: 1 }}>
+              <Button
+                component={Link}
+                to={`/book/${book.id}`}
+                size="small"
+              >
+                Details
+              </Button>
+
+              <Button
+                onClick={() => remove(book.id)}
+                size="small"
+                sx={{
+                  color: "#ef4444",
+                }}
+              >
+                Remove
+              </Button>
+            </Box>
           </div>
 
           <img
